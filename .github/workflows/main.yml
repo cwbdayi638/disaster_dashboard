@@ -30,7 +30,7 @@ jobs:
             - FastAPI 端點 (API 服務): https://huggingface.co/spaces/cwbdayi/disaster_fastapi
             
             系統自動發送，請勿直接回覆。
-          to: oceanicdayi@gmail.com
+          to: ${{ secrets.RECEIVE_EMAIL }}
           from: Disaster System <no-reply@github.com>
 
       - name: Push to Hub (Gradio Space)
