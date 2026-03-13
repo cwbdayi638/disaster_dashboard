@@ -1,0 +1,34 @@
+name: Disaster Response Sync
+
+on:
+  push:
+    paths:
+      - 'data/reports.json'
+  workflow_dispatch:
+
+jobs:
+  notify-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Send Email Notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: 【緊急災情通報通知】系統資料已更新
+          body: |
+            您好，防災系統已偵測到新的第一線通報資料。
+            
+            詳細內容請查看：
+            - GitHub Pages (靜態展示): https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+            - Hugging Face Spaces (互動展示): https://huggingface.co/spaces/cwbdayi/disaster_dashboard
+            - FastAPI 端點 (API 服務): https://huggingface.co/spaces/cwbdayi/disaster_fastapi
+            
+            系統自動發送，請勿直接回覆。
+          to: disaster_response_team@example.com
+          from: Disaster System <no-reply@github.com>

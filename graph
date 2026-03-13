@@ -1,0 +1,24 @@
+graph TD
+    A[第一線人員 (Telegram)] -->|災情通報| B[Openclaw 智慧核心]
+    B -->|格式化並推送| C[GitHub Repository]
+    C -->|靜態網頁展示| D[GitHub Pages]
+    C -->|GitHub Action 自動流程| G[自動發送 Email]
+    G --> F[防災相關人員]
+    C -->|GitHub Action 自動部署| E[Hugging Face Spaces]
+    E --> F
+    
+    subgraph "通報與處理"
+        A
+        B
+    end
+    
+    subgraph "存儲與自動化"
+        C
+        G
+    end
+    
+    subgraph "展示與通知終端"
+        D
+        E
+        F
+    end

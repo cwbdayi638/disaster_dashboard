@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Disaster Report",
+  "type": "object",
+  "properties": {
+    "report_id": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "reporter": {
+      "type": "object",
+      "properties": {
+        "platform": { "type": "string", "enum": ["Telegram"] },
+        "user_id": { "type": "string" },
+        "username": { "type": "string" }
+      }
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "address": { "type": "string" },
+        "district": { "type": "string" }
+      }
+    },
+    "incident": {
+      "type": "object",
+      "properties": {
+        "category": { "type": "string", "enum": ["Flood", "Landslide", "Wind", "Other"] },
+        "severity": { "type": "string", "enum": ["Low", "Medium", "High", "Critical"] },
+        "description": { "type": "string" },
+        "image_url": { "type": "string" }
+      }
+    },
+    "status": { "type": "string", "enum": ["Reported", "Verified", "In Progress", "Resolved"] }
+  },
+  "required": ["report_id", "timestamp", "location", "incident"]
+}

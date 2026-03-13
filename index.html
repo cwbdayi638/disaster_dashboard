@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>即時防災資訊儀表板 (GitHub Pages)</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --accent: #38bdf8;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .severity {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .Critical { background: #ef4444; }
+        .High { background: #f97316; }
+        .Medium { background: #eab308; }
+        .Low { background: #22c55e; }
+        .timestamp { font-size: 0.85rem; color: #94a3b8; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>即時防災資訊系統</h1>
+            <div id="last-update" class="timestamp">最後更新: 正在載入...</div>
+        </header>
+        <div id="report-grid" class="grid">
+            <!-- Reports will be injected here -->
+        </div>
+    </div>
+
+    <script>
+        async function fetchReports() {
+            try {
+                // In actual deployment, this fetches from the repo's data file
+                const response = await fetch('data/reports.json');
+                const data = await response.json();
+                renderReports(data);
+                document.getElementById('last-update').innerText = `最後更新: ${new Date().toLocaleString()}`;
+            } catch (e) {
+                console.error("Failed to load reports", e);
+                document.getElementById('report-grid').innerHTML = '<p>尚無即時通報資料</p>';
+            }
+        }
+
+        function renderReports(reports) {
+            const grid = document.getElementById('report-grid');
+            grid.innerHTML = reports.map(r => `
+                <div class="card">
+                    <span class="severity ${r.incident.severity}">${r.incident.severity}</span>
+                    <h3>${r.incident.category}</h3>
+                    <p>${r.incident.description}</p>
+                    <div class="timestamp">地點: ${r.location.district} (${r.location.address})</div>
+                    <div class="timestamp">時間: ${new Date(r.timestamp).toLocaleString()}</div>
+                </div>
+            `).join('');
+        }
+
+        fetchReports();
+    </script>
+</body>
+</html>

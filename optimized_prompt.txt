@@ -1,0 +1,43 @@
+# 高階系統生成 Prompt：全自動防災資訊整合系統
+
+## 核心任務：
+請在 Antigravity 環境下，基於「自然語言驅動」與「無縫自動化佈署」原則，建構一套完整的防災資訊整合流程系統。
+
+## 系統需求與組建細節：
+
+1. **統一資料架構 (Interoperability Schema)**：
+   - 定義一套高品質、擴展性強的 JSON 資料交換格式（Schema）。
+   - 必須包含：通報 ID、時間、精確經緯度、災情類別（如淹水、地滑、強風）、嚴重程度（分級標籤）及多媒體連結。
+   - 目的：確保 Openclaw 與前後端展示系統能進行無損資料交換。
+
+2. **前端展示系統 (Static Ecosystem)**：
+   - **目標**：部署於 GitHub Pages。
+   - **技術細節**：使用 Vanilla JS/CSS 打造高品質、Premium 感的視覺儀表板。
+   - **功能**：具備自動抓取 data/ 資料夾內 JSON 的能力、卡片式動態牆、以及依嚴重程度變色的視覺提醒。
+
+3. **互動式智慧展示 (Interactive AI Space - Visual)**：
+   - **目標**：部署於第一個 Hugging Face Space。
+   - **技術細節**：使用 Gradio 框架，整合 Plotly 或 Pandas 進行數據分析展示。
+   - **功能**：提供災情統計圖表（如圓餅圖、趨勢圖）、支持按嚴重程度或地區進行互動式篩選。
+
+4. **即時資料 API 服務 (Interactive AI Space - API)**：
+   - **目標**：部署於第二個 Hugging Face Space。
+   - **技術細節**：建立 FastAPI 服務。
+   - **功能**：提供目前 GitHub 蒐集到的災情資訊 API。使第一線防災人員能在外透過 Telegram 連線到 Openclaw 時，藉由此 FastAPI 端點精準查詢最新彙整的災情動態。
+
+5. **自動化協同工作流 (GitHub Actions)**：
+   - **腳本 A (Deploy Sync)**：當 Git Repo 有資料 Push 時，自動同步程式碼至 Hugging Face Spaces 控制台。
+   - **腳本 B (Notification System)**：偵測到關鍵資料更新時，自動透過 SMTP 服務發送「緊急郵件通知」給災防負責人員，郵件內需附帶靜態與互動網頁的連結。
+
+## 應用情境 (Scenario Flow)：
+1. **輸入端**：第一線巡查人員透過 Telegram Bot 發送災情內容。
+2. **處理端**：Openclaw 接收 Telegram 訊息，進行 NLP 分析、格式轉換，並自動 Commit 並 Push 修正後的 JSON 檔案至 GitHub 儲存庫。
+3. **分發端**：
+   - GitHub Pages 即時更新靜態展示。
+   - GitHub Actions 觸發郵件通知並同步部署至「視覺展示」及「API 服務」兩個 Hugging Face Spaces。
+   - 指揮中心可同步在兩個平台上掌握災情動態。
+
+## 輸出要求：
+- 生成所有必要的程式碼（index.html, gradio_app.py, fastapi_app.py, main.yml, requirements.txt, schema.json）。
+- 提供 Mermaid 格式的系統架構圖與流程序列圖。
+- 所有程式碼需具備高品質註解，適合演講展示使用。
