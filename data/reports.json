@@ -1,29 +1,7 @@
 [
     {
-        "report_id": "REP-20260313-007",
-        "timestamp": "2026-03-13T10:55:00Z",
-        "reporter": {
-            "platform": "Openclaw",
-            "user_id": "SYS02",
-            "username": "AI_輔助觀測"
-        },
-        "location": {
-            "latitude": 23.4735,
-            "longitude": 120.4475,
-            "address": "嘉義市東區中山路",
-            "district": "東區"
-        },
-        "incident": {
-            "category": "積水",
-            "severity": "中度",
-            "description": "短延時強降雨導致路面積水約 15 公分，提醒過往車輛減速慢行。",
-            "image_url": "https://example.com/flood2.jpg"
-        },
-        "status": "處理中"
-    },
-    {
         "report_id": "REP-20260313-006",
-        "timestamp": "2026-03-13T10:00:00Z",
+        "timestamp": "2026-03-13T10:00:01Z",
         "reporter": {
             "platform": "Openclaw",
             "user_id": "OC-User-99",
