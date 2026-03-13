@@ -38,12 +38,14 @@ jobs:
           HF_TOKEN: ${{ secrets.HUGGING_FACE_TOKEN }}
         run: |
           cd backend/gradio_space
+          rm -rf .git
+          git config --global init.defaultBranch main
           git init
           git config user.email "bot@example.com"
           git config user.name "AI Assistant"
           git add .
           git commit -m "Auto-deploy via GitHub Action"
-          git branch -M main
+          git branch -m main || true
           git remote add origin https://cwbdayi:$HF_TOKEN@huggingface.co/spaces/cwbdayi/disaster_dashboard
           git push -u origin main -f
 
@@ -52,11 +54,13 @@ jobs:
           HF_TOKEN: ${{ secrets.HUGGING_FACE_TOKEN }}
         run: |
           cd backend/fastapi_space
+          rm -rf .git
+          git config --global init.defaultBranch main
           git init
           git config user.email "bot@example.com"
           git config user.name "AI Assistant"
           git add .
           git commit -m "Auto-deploy via GitHub Action"
-          git branch -M main
+          git branch -m main || true
           git remote add origin https://cwbdayi:$HF_TOKEN@huggingface.co/spaces/cwbdayi/disaster_fastapi
           git push -u origin main -f
