@@ -18,8 +18,8 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
+          username: ${{ secrets.SENDER_EMAIL }}
+          password: ${{ secrets.CWBDAYI_EMAIL_PASSWORD }}
           subject: 【緊急災情通報通知】系統資料已更新
           body: |
             您好，防災系統已偵測到新的第一線通報資料。
