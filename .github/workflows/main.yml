@@ -30,5 +30,31 @@ jobs:
             - FastAPI 端點 (API 服務): https://huggingface.co/spaces/cwbdayi/disaster_fastapi
             
             系統自動發送，請勿直接回覆。
-          to: disaster_response_team@example.com
+          to: oceanicdayi@gmail.com
           from: Disaster System <no-reply@github.com>
+
+      - name: Push to Hub (Gradio Space)
+        env:
+          HF_TOKEN: ${{ secrets.HUGGING_FACE_TOKEN }}
+        run: |
+          cd backend/gradio_space
+          git init
+          git config user.email "bot@example.com"
+          git config user.name "AI Assistant"
+          git add .
+          git commit -m "Auto-deploy via GitHub Action"
+          git remote add origin https://cwbdayi:$HF_TOKEN@huggingface.co/spaces/cwbdayi/disaster_dashboard
+          git push -u origin main -f
+
+      - name: Push to Hub (FastAPI Space)
+        env:
+          HF_TOKEN: ${{ secrets.HUGGING_FACE_TOKEN }}
+        run: |
+          cd backend/fastapi_space
+          git init
+          git config user.email "bot@example.com"
+          git config user.name "AI Assistant"
+          git add .
+          git commit -m "Auto-deploy via GitHub Action"
+          git remote add origin https://cwbdayi:$HF_TOKEN@huggingface.co/spaces/cwbdayi/disaster_fastapi
+          git push -u origin main -f

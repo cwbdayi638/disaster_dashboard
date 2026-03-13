@@ -1,5 +1,27 @@
 [
     {
+        "report_id": "REP-20260313-006",
+        "timestamp": "2026-03-13T10:00:00Z",
+        "reporter": {
+            "platform": "Openclaw",
+            "user_id": "OC-User-99",
+            "username": "AI_巡邏員"
+        },
+        "location": {
+            "latitude": 24.8138,
+            "longitude": 120.9675,
+            "address": "新竹市北區中正路",
+            "district": "北區"
+        },
+        "incident": {
+            "category": "強風",
+            "severity": "嚴重",
+            "description": "測得瞬間陣風達12級，多處招牌掉落，已通報相關單位處理。",
+            "image_url": "https://example.com/wind.jpg"
+        },
+        "status": "處理中"
+    },
+    {
         "report_id": "REP-20260312-001",
         "timestamp": "2026-03-12T08:30:00Z",
         "reporter": {
