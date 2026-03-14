@@ -1,0 +1,24 @@
+[
+  {
+    "report_id": "REP-20260313-114342",
+    "timestamp": "2026-03-13T11:43:42Z",
+    "reporter": {
+      "platform": "Openclaw",
+      "user_id": "OC-User-99",
+      "username": "AI_巡邏員"
+    },
+    "location": {
+      "latitude": 25.033,
+      "longitude": 121.5654,
+      "address": "台北市中正區",
+      "district": "中正區"
+    },
+    "incident": {
+      "category": "水災",
+      "severity": "嚴重",
+      "description": "台北市中正區發生水災，我是A2巡邏員小名，水深達1公尺",
+      "image_url": "https://example.com/placeholder.jpg"
+    },
+    "status": "處理中"
+  }
+]

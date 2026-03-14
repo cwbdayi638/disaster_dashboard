@@ -1,6 +1,0 @@
-gradio
-pandas
-requests
-plotly
-huggingface-hub<0.27.0
-folium

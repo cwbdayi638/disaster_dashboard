@@ -1,0 +1,24 @@
+[
+  {
+    "report_id": "REP-20260313-170243",
+    "timestamp": "2026-03-13T17:02:43Z",
+    "reporter": {
+      "platform": "Openclaw",
+      "user_id": "OC-User-99",
+      "username": "AI_巡邏員"
+    },
+    "location": {
+      "latitude": 25.033,
+      "longitude": 121.5654,
+      "address": "未知地點",
+      "district": "未知"
+    },
+    "incident": {
+      "category": "待確認",
+      "severity": "中度",
+      "description": "新北市平溪區，發生強風，有多處路樹倒塌，巡查員A3",
+      "image_url": "https://example.com/placeholder.jpg"
+    },
+    "status": "處理中"
+  }
+]

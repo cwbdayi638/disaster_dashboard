@@ -1,3 +1,0 @@
-在antigravity內透過輸入自然語言，建立系統架構流程說明，建立佈署在github pages所需的程式碼、huggingface space(用gradio方式)所需的程式碼、github action所需的腳本、以及openclaw 分析完第一線人員的輸入資料之後，彙整成統一的資料格式內容 (方便不同系統溝通使用)。
-應用情境如下:
-第一線人員透過telegram 通報災情，由openclaw 處理並整理成統一格式後推送到github, 在github pages 展示靜態網頁，投過github action 自動部署在Hugging Face Spaces 做互動式網頁展示，並且由github action 寄送email給相關負責災防工作的人員。
