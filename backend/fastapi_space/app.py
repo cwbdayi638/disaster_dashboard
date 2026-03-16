@@ -27,6 +27,7 @@ def load_data():
 def read_root():
     return {"status": "ok", "message": "災情即時資訊 API 服務運行中"}
 
+@app.get("/reports")
 @app.get("/api/reports")
 def get_reports(severity: str = None):
     data = load_data()
@@ -34,6 +35,7 @@ def get_reports(severity: str = None):
         return [r for r in data if r.get('incident', {}).get('severity') == severity]
     return data
 
+@app.get("/stats")
 @app.get("/api/stats")
 def get_stats():
     data = load_data()
