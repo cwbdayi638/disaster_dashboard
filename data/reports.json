@@ -1,5 +1,27 @@
 [
     {
+        "report_id": "REP-20260317-001",
+        "timestamp": "2026-03-17T00:45:00Z",
+        "reporter": {
+            "platform": "Openclaw",
+            "user_id": "OC-Simulation",
+            "username": "AI_巡邏員"
+        },
+        "location": {
+            "latitude": 24.1627,
+            "longitude": 121.6163,
+            "address": "花蓮縣秀林鄉太魯閣國家公園",
+            "district": "秀林鄉"
+        },
+        "incident": {
+            "category": "土石流",
+            "severity": "嚴重",
+            "description": "太魯閣路段發生土石崩塌，多處路面暫時封閉，提醒用路人切勿前往。",
+            "image_url": "https://example.com/taroko_landslide.jpg"
+        },
+        "status": "已通報"
+    },
+    {
         "report_id": "REP-20260313-006",
         "timestamp": "2026-03-13T10:00:05Z",
         "reporter": {
