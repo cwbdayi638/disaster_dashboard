@@ -25,7 +25,11 @@ def load_data():
 
 @app.get("/")
 def read_root():
-    return {"status": "ok", "message": "災情即時資訊 API 服務運行中"}
+    return {
+        "status": "ok", 
+        "message": "災情即時資訊 API 服務運行中",
+        "endpoints": ["/reports", "/stats"]
+    }
 
 @app.get("/reports")
 @app.get("/api/reports")
