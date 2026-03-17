@@ -1,5 +1,27 @@
 [
   {
+    "report_id": "REP-20260318-002",
+    "timestamp": "2026-03-18T02:54:00Z",
+    "reporter": {
+      "platform": "Telegram",
+      "user_id": "7825432646",
+      "username": "陳達毅"
+    },
+    "location": {
+      "latitude": 25.0127,
+      "longitude": 121.4648,
+      "address": "新北市中和區",
+      "district": "中和區"
+    },
+    "incident": {
+      "category": "路樹倒塌",
+      "severity": "輕度",
+      "description": "3級微風，有路樹倒塌",
+      "image_url": ""
+    },
+    "status": "已通報"
+  },
+  {
     "report_id": "REP-20260318-001",
     "timestamp": "2026-03-18T02:46:00Z",
     "reporter": {
@@ -168,9 +190,9 @@
       "district": "新興區"
     },
     "incident": {
-      "category": "停電",
+      "category": "停电",
       "severity": "中度",
-      "description": "變電箱爆炸導致周邊區域約 500 戶停電，台電人員已在現場搶修中。",
+      "description": "變電箱爆炸導致周邊區域約 500 戶停电，台電人員已在現場搶修中。",
       "image_url": "https://example.com/power_outage.jpg"
     },
     "status": "處理中"
