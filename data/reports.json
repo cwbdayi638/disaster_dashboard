@@ -1,5 +1,27 @@
 [
   {
+    "report_id": "REP-20260318-001",
+    "timestamp": "2026-03-18T02:46:00Z",
+    "reporter": {
+      "platform": "Telegram",
+      "user_id": "7825432646",
+      "username": "陳達毅"
+    },
+    "location": {
+      "latitude": 25.1628,
+      "longitude": 121.6911,
+      "address": "新北市萬里區",
+      "district": "萬里區"
+    },
+    "incident": {
+      "category": "強風",
+      "severity": "嚴重",
+      "description": "測得8級強風，有路樹倒塌",
+      "image_url": ""
+    },
+    "status": "已通報"
+  },
+  {
     "report_id": "REP-20260317-001",
     "timestamp": "2026-03-17T00:45:00Z",
     "reporter": {
